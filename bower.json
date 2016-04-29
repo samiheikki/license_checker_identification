@@ -1,0 +1,22 @@
+{
+  "name": "license_checker_identification",
+  "homepage": "https://github.com/samiheikki/license_checker_identification",
+  "authors": [
+    "Sami Suo-Heikki <samiheikki@vaadin.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vaadin-charts": "^3.1.0-beta1",
+    "vaadin-license-checker": "vaadin/license-checker#task/LC-18",
+    "angular": "1.5.5"
+  }
+}

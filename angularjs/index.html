@@ -1,0 +1,17 @@
+<html ng-app>
+  <head>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../bower_components/vaadin-charts/vaadin-area-chart.html">
+  </head>
+  <body>
+    <vaadin-area-chart>
+          <title>Fibonacci</title>
+          <x-axis><title>Index</title></x-axis>
+          <y-axis><title>Value</title></y-axis>
+          <data-series>
+            <data>1, 1, 2, 3, 5, 8, 13, 21, 34</data>
+          </data-series>
+    </vaadin-area-chart>
+  </body>
+</html>
