@@ -1,0 +1,61 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]--> <!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]--> <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]--> <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>ember test</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../bower_components/vaadin-charts/vaadin-area-chart.html">
+
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <script type="text/x-handlebars">
+
+    {{view Todos.CreateTodoView id="new-todo" placeholder="What needs to be done?"}}
+
+    {{#collection contentBinding="Todos.todosController" tagName="ul" }}
+      {{view Em.Checkbox titleBinding="content.title" valueBinding="content.isDone"}}
+    {{/collection}}
+
+    {{view Em.Checkbox class="mark-all-done"
+      title="Mark All as Done"
+      valueBinding="Todos.todosController.allAreDone"}}
+
+
+    {{#view Todos.StatsView id="stats"}}
+      {{#view Em.Button classBinding="isActive"
+        target="Todos.todosController" action="clearCompletedTodos"}}
+        Clear Completed Todos
+      {{/view}}
+      {{remainingString}} remaining
+    {{/view}}
+
+  </script>
+
+  <!-- The missing protocol means that it will match the current protocol, either http or https. If running locally, we use the local jQuery. -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cloud.github.com/downloads/emberjs/ember.js/ember-0.9.6.min.js"></script>
+  <script src="app.js"></script>
+
+
+  <vaadin-area-chart>
+        <title>Fibonacci</title>
+        <x-axis><title>Index</title></x-axis>
+        <y-axis><title>Value</title></y-axis>
+        <data-series>
+          <data>1, 1, 2, 3, 5, 8, 13, 21, 34</data>
+        </data-series>
+  </vaadin-area-chart>
+</body>
+</html>
