@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>backbone test</title>
+      <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+      <script src="../bower_components/underscore/underscore.js"></script>
+      <script src="../bower_components/backbone/backbone.js"></script>
+      <link rel="import" href="../bower_components/vaadin-charts/vaadin-area-chart.html">
+  </head>
+  <body>
+    <vaadin-area-chart>
+          <title>Fibonacci</title>
+          <x-axis><title>Index</title></x-axis>
+          <y-axis><title>Value</title></y-axis>
+          <data-series>
+            <data>1, 1, 2, 3, 5, 8, 13, 21, 34</data>
+          </data-series>
+    </vaadin-area-chart>
+  </body>
+</html>
